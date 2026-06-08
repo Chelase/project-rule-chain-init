@@ -66,10 +66,11 @@ description: "为任意软件项目初始化 Agent 规则链路。创建或合�
      - **覆盖**：用我们的 CLAUDE.md 替换现有文件。
      - **跳过**：保留现有 CLAUDE.md，不修改。
 4. **Git 工具检测**：检测项目使用的 Git 远端类型：
-   - 检查 `git remote -v`，若远端为 GitLab 实例 → 检查 `glab` 是否已安装（`glab --version`），若未安装则告知用户可选安装（Windows: `winget install GLab.GLab` 或 `scoop install glab`；macOS: `brew install glab`），并说明 `glab` 可提升 GitLab MR/Issue/流水线操作效率。
-   - 若用户选择安装 glab → 安装后收集 GitLab 配置信息（实例地址、用户名、协议偏好），执行 `glab auth login` 引导认证，并在 `rules/git-operations.md` 中替换 glab 相关占位符。
-   - 若远端非 GitLab 或用户不装 glab → 保留 `rules/git-operations.md` 中 Git 通用约定（约定式提交、中文提交），glab 占位符段按「glab 未配置」状态填充。
-   - 若项目无 Git 远端 → 跳过 Git 工具检测，`rules/git-operations.md` 中的远端操作规则不生效。
+   - 检查 `git remote -v`，根据远端域名判断平台：
+     - **GitHub**（`github.com`）→ 推荐安装 `gh`（GitHub CLI），说明其 PR/Issue/CI 管理能力。若用户选择安装 → 安装后执行 `gh auth login` 引导认证，记录 `gh` 状态用于填充 `rules/git-operations.md`。
+     - **GitLab**（`gitlab.com` 或自建域名）→ 推荐安装 `glab`（GitLab CLI），说明其 MR/Issue/流水线管理能力。若用户选择安装 → 安装后收集 GitLab 配置信息（实例地址、用户名、协议偏好），执行 `glab auth login` 引导认证，并在 `rules/git-operations.md` 中替换 glab 相关占位符。**自建 GitLab** 需额外确认域名和 Personal Access Token。
+     - **其他平台**或**无远端** → 仅保留通用 Git 约定（约定式提交、中文提交），工具占位符按「未配置」状态填充。
+   - 用户可同时选择 `gh` 和 `glab`（项目同时使用 GitHub 和 GitLab 时），也可只选一个或都不装。
 
 ### 步骤 1：铺设 `.agent-rules/` 骨架
 
