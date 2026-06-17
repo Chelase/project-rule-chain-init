@@ -23,7 +23,8 @@ description: "为任意软件项目初始化 Agent 规则链路。创建或合�
                 ├─ rules/        项目执行规则（必须/不要/优先）
                 ├─ mechanisms/   项目稳定机制（系统如何协作 / 接口 / 字段 / 风险）
                 ├─ dev-plans/    开发计划
-                └─ handoffs/     跨会话接力摘要（做到哪 / 未提交什么 / 下步怎么接）
+                ├─ handoffs/     跨会话接力摘要（做到哪 / 未提交什么 / 下步怎么接）
+                └─ docs/         参考资料（外部规范、技术参考、学习笔记）
 
 额外 Agent 桥接入口（按需，由 Agent 自行决定文件名和内容）
   └─ <agent-decided>.md  (仅当 AGENTS.md / CLAUDE.md 不覆盖时，由当前 Agent 自建)
@@ -45,6 +46,7 @@ description: "为任意软件项目初始化 Agent 规则链路。创建或合�
    - "系统现在如何工作、接口如何协作、字段如何解释" → `mechanisms/`
    - "本期改哪些文件、按什么步骤验收、进度如何" → `dev-plans/`
    - "上一轮做到哪、哪些文件未提交、下一轮怎么接" → `handoffs/`
+   - "外部参考资料、技术规范摘要、学习笔记" → `docs/`
 
 ## 执行步骤
 
@@ -92,6 +94,7 @@ description: "为任意软件项目初始化 Agent 规则链路。创建或合�
 - `mechanisms/README.md` — 机制层说明 + 机制文档清单占位（含七段强制结构约定）。
 - `dev-plans/README.md` — 开发计划层说明（命名约定、结构约定、归档流程、在册清单占位）。
 - `handoffs/README.md` — 交接层说明 + 命名约定。
+- `docs/README.md` — 参考资料层说明（外部规范、技术参考、学习笔记）。
 - `dev-plans/archived/.gitkeep` — 占位，保留归档目录。
 
 替换 `{{PROJECT_NAME}}` 占位符。`rules/git-operations.md` 中的占位符在步骤 0 收集到信息后替换。四层目录只放 README 索引和预置规则，**不预置机制/计划/交接条目**。这些要靠后续真实工作沉淀，避免一开始就塞进没人验证过的规则。
@@ -218,7 +221,8 @@ project-rule-chain-init/
    │  ├─ mechanisms/README.md                # 含七段强制结构约定
    │  ├─ dev-plans/README.md
    │  ├─ dev-plans/archived/.gitkeep
-   │  └─ handoffs/README.md
+   │  ├─ handoffs/README.md
+   │  └─ docs/README.md
    └─ bridge/
       ├─ AGENTS.md                           # Codex / 通用 Agent 桥接入口模板（默认生成）
       └─ CLAUDE.md                           # Claude 桥接入口摘要段模板（默认生成）
