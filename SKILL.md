@@ -97,7 +97,7 @@ description: "为任意软件项目初始化 Agent 规则链路。创建或合�
 - `docs/README.md` — 参考资料层说明（外部规范、技术参考、学习笔记）。
 - `dev-plans/archived/.gitkeep` — 占位，保留归档目录。
 
-替换 `{{PROJECT_NAME}}` 占位符。`rules/git-operations.md` 中的占位符在步骤 0 收集到信息后替换。四层目录只放 README 索引和预置规则，**不预置机制/计划/交接条目**。这些要靠后续真实工作沉淀，避免一开始就塞进没人验证过的规则。
+替换 `{{PROJECT_NAME}}` 和 `{{SKILL_VERSION}}`（读取技能仓库 `VERSION` 文件）和 `{{INIT_DATE}}`（当前日期）占位符。`rules/git-operations.md` 中的占位符在步骤 0 收集到信息后替换。四层目录只放 README 索引和预置规则，**不预置机制/计划/交接条目**。这些要靠后续真实工作沉淀，避免一开始就塞进没人验证过的规则。
 
 ### 步骤 2：落桥接入口
 

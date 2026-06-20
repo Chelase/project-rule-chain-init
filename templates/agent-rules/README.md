@@ -1,5 +1,12 @@
 # {{PROJECT_NAME}} Agent 规则统筹
 
+> 本规则链路由 `project-rule-chain-init` 技能初始化生成。
+>
+> - **技能仓库**：https://github.com/Chelase/project-rule-chain-init
+> - **作者**：Chelase
+> - **技能版本**：{{SKILL_VERSION}}
+> - **初始化时间**：{{INIT_DATE}}
+
 ## 1. 目的
 
 `.agent-rules/` 是本项目的 Agent 规则统筹、机制梳理、开发计划索引与跨会话接力目录。
