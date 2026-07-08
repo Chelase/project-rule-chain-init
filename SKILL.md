@@ -91,6 +91,8 @@ description: "为任意软件项目初始化 Agent 规则链路。创建或合�
 - `README.md` — 项目规则总纲（含读取链路、优先级、分层判据、维护规则）。
 - `rules/README.md` — 项目规则层说明 + 规则文件清单占位。
 - `rules/git-operations.md` — Git 操作规则（预置，替换 `{{GIT_PLATFORM}}` 及 glab 相关占位符）。
+- `rules/complex-feature-mechanism.md` — 复杂功能强制生成机制文档（预置）。
+- `rules/project-onboarding.md` — 项目速览模板（预置，由 Agent 首次分析项目时填充）。
 - `mechanisms/README.md` — 机制层说明 + 机制文档清单占位（含七段强制结构约定）。
 - `dev-plans/README.md` — 开发计划层说明（命名约定、结构约定、归档流程、在册清单占位）。
 - `handoffs/README.md` — 交接层说明 + 命名约定。
@@ -134,6 +136,7 @@ description: "为任意软件项目初始化 Agent 规则链路。创建或合�
 以下是初始化产物中的长期约定，不代表本技能能代替用户完成后续维护：
 
 - 新的项目级长期执行约束 → 根 `rules/`，并在 `rules/README.md` 索引追加一行。
+- `rules/project-onboarding.md`（项目速览）→ Agent 首次分析项目时必须填充，内容包括：技术栈、目录结构、核心模块、特殊机制、常用开发路径、构建命令。后续项目结构重大变更时同步更新。
 - 复杂跨模块功能实施时强制生成机制文档 → 当实现涉及多模块调用、非直链交互、连锁状态变更或公共契约修改时，必须遵循 `rules/complex-feature-mechanism.md` 的触发条件与执行方式，在实施前/中/后同步维护机制文档，防止后期链路断裂。
 - Agent 完成分析、梳理、排障复盘、架构理解或项目链路确认后，若得到可复用稳定事实 → 按 `mechanisms/README.md` 七段强制结构新增或更新 `mechanisms/` 下的机制文档。七段为：结论、涉及对象（表格式）、运行链路（ASCII 图）、使用点、修改点（表格式）、关键约束（≤6 条）、维护方式。禁止写入大段代码、方案论证、DDL、长篇背景或超 150 行。
 - 新的稳定机制梳理 → `mechanisms/`，按七段强制结构编写，并在 `mechanisms/README.md` 与根 `.agent-rules/README.md` 索引追加一行。
@@ -218,6 +221,8 @@ project-rule-chain-init/
    │  ├─ README.md                           # 链路总纲模板
    │  ├─ rules/README.md
    │  ├─ rules/git-operations.md             # 预置规则：Git 操作
+   │  ├─ rules/complex-feature-mechanism.md  # 预置规则：复杂功能强制生成机制文档
+   │  ├─ rules/project-onboarding.md         # 预置规则：项目速览模板
    │  ├─ mechanisms/README.md                # 含七段强制结构约定
    │  ├─ dev-plans/README.md
    │  ├─ dev-plans/archived/.gitkeep

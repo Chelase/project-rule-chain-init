@@ -21,6 +21,7 @@
 > 已预置：
 > - `git-operations.md`：Git 协作工具、约定式提交、中文提交规范。
 > - `complex-feature-mechanism.md`：复杂跨模块功能实施时强制同步生成机制文档的规则。
+> - `project-onboarding.md`：项目速览（技术栈、目录结构、核心模块、特殊机制、常用开发路径），由 Agent 首次分析项目时填充。
 >
 > 可按需新增（示例，非默认创建）：
 > - `repo-context.md`：仓库背景、技术栈、目录职责边界。
